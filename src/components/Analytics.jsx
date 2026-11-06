@@ -18,19 +18,41 @@ const readConsent = () => {
 // Loads Google Analytics 4 once. GA4's enhanced measurement (on by default) also counts the
 // page changes inside this single-page site, so no manual page_view calls are needed.
 let loaded = false
-function loadGoogleAnalytics(id) {
+function loadGoogleAnalytics(id, containerId) {
   if (loaded) return
   loaded = true
   window.dataLayer = window.dataLayer || []
   window.gtag = function gtag() {
     window.dataLayer.push(arguments) // gtag expects the arguments object itself
   }
+  window.gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+  })
+  window.gtag('consent', 'update', {
+    analytics_storage: 'granted',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+  })
   window.gtag('js', new Date())
   window.gtag('config', id, { anonymize_ip: true })
   const script = document.createElement('script')
   script.async = true
   script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`
   document.head.appendChild(script)
+
+  // Load the Google Tag Manager container only after the same explicit consent.
+  // The GTM container can manage additional tags without bypassing the cookie choice.
+  if (containerId) {
+    window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' })
+    const managerScript = document.createElement('script')
+    managerScript.async = true
+    managerScript.src = `https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(containerId)}`
+    document.head.appendChild(managerScript)
+  }
 }
 
 // The footer's "Cookie settings" link fires this to show the notice again
@@ -51,7 +73,13 @@ export default function Analytics() {
     if (!id) return
     // Google's own switch: true stops gtag.js sending anything, even after it has loaded
     window[`ga-disable-${id}`] = consent !== 'granted'
-    if (consent === 'granted') loadGoogleAnalytics(id)
+    if (consent === 'granted') loadGoogleAnalytics(id, company.gtmId)
+    else window.gtag?.('consent', 'update', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+    })
   }, [id, consent])
 
   // Reopened from the footer: show the notice and move keyboard focus into it

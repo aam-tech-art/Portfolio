@@ -32,6 +32,8 @@ export const company = {
   // Google Analytics 4 measurement ID, e.g. 'G-ABC123XYZ'. While empty, no analytics or
   // cookie notice is loaded.
   gaId: 'G-HN90VM1QSG',
+  // Google Tag Manager container. Loaded only after the visitor accepts analytics cookies.
+  gtmId: 'GTM-WTVSN82X',
   location: 'Remote — working with clients worldwide',
   // Paste each page's link between the quotes. Empty ones are hidden from the footer.
   socials: [
