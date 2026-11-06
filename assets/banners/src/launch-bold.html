@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Launch post: bold dark green</title>
+  <link rel="stylesheet" href="banner.css" />
+  <style>
+    .post {
+      background:
+        radial-gradient(circle at 12% 8%, rgba(142, 182, 155, 0.22), transparent 38%),
+        radial-gradient(circle at 100% 100%, rgba(46, 122, 92, 0.35), transparent 45%),
+        linear-gradient(150deg, var(--pine-700), var(--pine-800) 45%, var(--pine-900));
+      color: var(--pine-50);
+      padding: 84px;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Fine grid lines, like a designer's canvas */
+    .post::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(218, 241, 222, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(218, 241, 222, 0.06) 1px, transparent 1px);
+      background-size: 90px 90px;
+      mask-image: radial-gradient(circle at 70% 40%, #000, transparent 75%);
+    }
+    .top, .body, .bottom { position: relative; }
+    .top { display: flex; align-items: center; justify-content: space-between; }
+    .brand span { color: var(--pine-100); }
+    .badge {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 12px 22px; border-radius: 999px;
+      background: rgba(218, 241, 222, 0.1); border: 1.5px solid rgba(218, 241, 222, 0.25);
+      font-size: 20px; font-weight: 700; letter-spacing: 0.1em; color: var(--pine-100);
+    }
+    .badge i { width: 12px; height: 12px; border-radius: 50%; background: #5ee08f; box-shadow: 0 0 0 6px rgba(94, 224, 143, 0.2); }
+    .body { margin-top: auto; }
+    .eyebrow { color: var(--pine-300); margin-bottom: 30px; }
+    h1 { font-size: 120px; font-weight: 700; line-height: 0.98; margin-bottom: 36px; }
+    h1 em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--pine-300), var(--pine-100));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    p { font-size: 32px; line-height: 1.45; color: rgba(218, 241, 222, 0.82); max-width: 860px; }
+    .facts { display: flex; margin-top: 48px; border-top: 1.5px solid rgba(218, 241, 222, 0.18); padding-top: 30px; }
+    .facts div { flex: 1; }
+    .facts div + div { border-left: 1.5px solid rgba(218, 241, 222, 0.18); padding-left: 34px; }
+    .facts strong { display: block; font-family: 'DM Sans', sans-serif; font-size: 44px; font-weight: 700; color: var(--pine-50); }
+    .facts span { font-size: 22px; color: rgba(218, 241, 222, 0.7); }
+    .bottom { margin-top: 48px; }
+    .cta { background: var(--pine-100); color: var(--pine-900); box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.6); }
+  </style>
+</head>
+<body>
+  <div class="post">
+    <div class="top">
+      <div class="brand"><img src="../../../public/logo-mark-dark.png" alt="" /><span>Technology</span></div>
+      <div class="badge"><i></i>NOW LIVE</div>
+    </div>
+
+    <div class="body">
+      <h1 class="display">Our new website<br />is <em>live.</em></h1>
+      <p>See our services, recent work and honest pricing, or ask for a free website audit.</p>
+      <div class="facts">
+        <div><strong>6</strong><span>Services</span></div>
+        <div><strong>Rs 100k</strong><span>Packages from</span></div>
+        <div><strong>24h</strong><span>Reply time</span></div>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <span class="cta">Visit the website <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</body>
+</html>

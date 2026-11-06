@@ -1,0 +1,65 @@
+/* Shared look for the social media posts: the website's own colours and fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,600;9..40,700&family=Inter:wght@400..800&display=block');
+
+:root {
+  --pine-900: #051f20;
+  --pine-800: #0b2b26;
+  --pine-700: #163832;
+  --pine-600: #235347;
+  --pine-500: #2e7a5c;
+  --pine-400: #4f9a78;
+  --pine-300: #8eb69b;
+  --pine-100: #daf1de;
+  --pine-50: #f8fdf9;
+  --cream: #eef8f0;
+  --border: #c3dfca;
+  --muted: #2d5248;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { width: 1080px; height: 1080px; overflow: hidden; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--pine-900);
+  -webkit-font-smoothing: antialiased;
+}
+
+.post { position: relative; width: 1080px; height: 1080px; overflow: hidden; }
+
+.display { font-family: 'DM Sans', 'Inter', sans-serif; font-optical-sizing: auto; letter-spacing: -0.02em; }
+
+/* Same gradient as the website's headline */
+.gradient {
+  background: linear-gradient(90deg, var(--pine-700), var(--pine-500) 55%, var(--pine-400));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.eyebrow::before { content: ''; width: 14px; height: 14px; border-radius: 3px; background: currentColor; }
+
+.brand { display: flex; align-items: center; gap: 16px; }
+.brand img { height: 46px; width: auto; display: block; }
+.brand span { font-size: 22px; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; }
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  height: 84px;
+  padding: 0 40px;
+  border-radius: 16px;
+  font-size: 30px;
+  font-weight: 700;
+}

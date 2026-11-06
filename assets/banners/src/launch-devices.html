@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Launch post: device mock-up</title>
+  <link rel="stylesheet" href="banner.css" />
+  <style>
+    .post {
+      background:
+        radial-gradient(ellipse at 50% 100%, rgba(35, 83, 71, 0.30), transparent 60%),
+        linear-gradient(180deg, var(--pine-50), var(--cream));
+      text-align: center;
+      padding: 70px 70px 0;
+    }
+    .brand { justify-content: center; margin-bottom: 40px; }
+    .eyebrow { color: var(--pine-600); margin-bottom: 22px; }
+    h1 { font-size: 72px; font-weight: 600; line-height: 1.06; }
+
+    /* Laptop with the real website inside. The site is shown at its real desktop size
+       (1440 px wide) and scaled down to fit the screen. */
+    .laptop { position: absolute; left: 50%; bottom: 64px; transform: translateX(-50%); width: 820px; }
+    .lid { background: var(--pine-900); border-radius: 26px 26px 0 0; padding: 20px 20px 22px; box-shadow: 0 40px 70px -30px rgba(5, 31, 32, 0.6); }
+    .screen { position: relative; width: 780px; height: 488px; overflow: hidden; border-radius: 8px; background: var(--cream); }
+    .base { height: 22px; margin: 0 -46px; background: linear-gradient(var(--pine-700), var(--pine-900)); border-radius: 0 0 22px 22px; }
+    .base::before { content: ''; display: block; width: 150px; height: 8px; margin: 0 auto; background: rgba(218, 241, 222, 0.18); border-radius: 0 0 8px 8px; }
+
+    /* Phone with the real mobile site (390 px wide), in front of the laptop */
+    .phone { position: absolute; right: 64px; bottom: 44px; width: 232px; padding: 12px; background: var(--pine-900); border-radius: 36px; box-shadow: 0 30px 60px -20px rgba(5, 31, 32, 0.65); }
+    .phone .screen { width: 208px; height: 440px; border-radius: 26px; }
+
+    iframe { position: absolute; top: 0; left: 0; border: 0; transform-origin: 0 0; pointer-events: none; }
+    /* Taller than the screen so the cookie notice (pinned to the bottom) stays out of view */
+    .laptop iframe { width: 1440px; height: 1300px; transform: scale(0.5417); }
+    .phone iframe { width: 390px; height: 1300px; transform: scale(0.5333); }
+
+    .live {
+      position: absolute; left: 64px; bottom: 120px;
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 14px 24px; border-radius: 16px;
+      background: var(--pine-50); border: 1.5px solid var(--border);
+      box-shadow: 0 16px 34px -18px rgba(5, 31, 32, 0.45);
+      font-size: 22px; font-weight: 700; color: var(--pine-700);
+    }
+    .live i { width: 12px; height: 12px; border-radius: 50%; background: #22a560; box-shadow: 0 0 0 6px rgba(34, 165, 96, 0.18); }
+  </style>
+</head>
+<body>
+  <div class="post">
+    <div class="brand"><img src="../../../public/logo-mark-light.png" alt="" /><span>Technology</span></div>
+    <p class="eyebrow">Our new website is live</p>
+    <h1 class="display">We build <span class="gradient">digital experiences</span><br />that grow businesses.</h1>
+
+    <!-- The screens show the live website. To show another website (e.g. a client's), change
+         the two src addresses below and export again. -->
+    <div class="laptop">
+      <div class="lid"><div class="screen"><iframe src="https://muhammad-mubashir-awan.github.io/AAM-tech-Portfolio/" title="Website on a laptop" scrolling="no"></iframe></div></div>
+      <div class="base"></div>
+    </div>
+
+    <div class="phone"><div class="screen"><iframe src="https://muhammad-mubashir-awan.github.io/AAM-tech-Portfolio/" title="Website on a phone" scrolling="no"></iframe></div></div>
+
+    <div class="live"><i></i>Now live</div>
+  </div>
+</body>
+</html>
