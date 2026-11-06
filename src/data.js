@@ -8,7 +8,7 @@ export const company = {
   tagline: 'We build digital experiences that grow businesses.',
   intro:
     'AAM Technology is a technology and software development company helping businesses, startups, and organizations build a strong digital presence with modern, responsive, and user-friendly websites.',
-  email: 'am.pk.tech@gmail.com',
+  email: 'aam.pk.tech@gmail.com',
   // Contact form delivery via Formspree (the part after formspree.io/f/).
   // If this is left empty, "Send message" opens the visitor's email app instead.
   formspreeId: 'mjygblwl',

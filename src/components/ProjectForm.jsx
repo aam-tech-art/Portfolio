@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { MailIcon, PlusIcon } from 'lucide-react'
+import { PlusIcon } from 'lucide-react'
 import { company, services } from '../data.js'
 import useIsClient from '../hooks/useIsClient.js'
 import FieldError from './FieldError.jsx'
@@ -387,9 +387,6 @@ export default function ProjectForm({ openedAt, form, setForm, idPrefix = 'pf', 
         <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 border-t border-border pt-4 md:col-span-2">
           {/* Own line on phones, so the two buttons stay side by side */}
           <span className="basis-full text-center text-[0.85rem] text-muted-foreground sm:basis-auto">Prefer to reach us directly?</span>
-          <a href={`mailto:${company.email}`} className={direct}>
-            <MailIcon aria-hidden="true" className="size-4 text-pine-600" /> Email us
-          </a>
           <WhatsAppLink page="contact" className={direct}>
             <WhatsAppIcon className="size-4 text-[#25d366]" /> WhatsApp
           </WhatsAppLink>
