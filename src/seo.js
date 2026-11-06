@@ -2,7 +2,7 @@
 // HTML file, so Google and link previews see the right ones; usePageTitle() sets the tab title.
 // The key is the page's address ('' is the home page).
 
-export const SITE_URL = 'https://muhammad-mubashir-awan.github.io/AAM-tech-Portfolio/'
+export const SITE_URL = 'https://aam-tech-art.github.io/Portfolio/'
 export const SITE_NAME = 'AAM Technology'
 export const HOME_TITLE = 'AAM Technology — Websites & Digital Solutions'
 

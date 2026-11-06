@@ -27,7 +27,7 @@ const withPageTags = (html, { title, description, url }) =>
 // `npm run build` makes two builds: the site itself, then a server build of
 // src/entry-server.jsx that scripts/prerender.js uses to fill each page's HTML.
 export default defineConfig(({ command, isPreview, isSsrBuild }) => ({
-  base: command === 'build' || isPreview ? '/AAM-tech-Portfolio/' : '/',
+  base: command === 'build' || isPreview ? '/Portfolio/' : '/',
   // '@/...' imports point at src/ (used by the shadcn components)
   resolve: { alias: { '@': resolve('src') } },
   // The server build bundles its packages too, so it runs in Node without extra setup
